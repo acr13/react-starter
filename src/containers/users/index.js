@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import userConnector from '../../selectors/users';
+
 const Users = ({ users }) => (
   <div>
     {users.map(user =>
@@ -9,17 +11,7 @@ const Users = ({ users }) => (
   </div>
 );
 
-function mapStateToProps(state) {
-  return {
-    users: state.users,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {};
-}
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  userConnector,
+  () => ({})
 )(Users);

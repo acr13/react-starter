@@ -8,16 +8,4 @@ const About = () =>
     </div>
   </div>
 
-function mapStateToProps(state) {
-  return {
-    
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(About);
+export default connect(() => ({}), () => ({}))(About);

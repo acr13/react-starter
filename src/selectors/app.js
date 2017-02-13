@@ -1,7 +1,5 @@
 import { createStructuredSelector } from 'reselect';
-import R from 'ramda';
-
-const getRoutes = R.prop(['routes']);
+import { getRoutes } from './raw-selectors';
 
 const appConnector = createStructuredSelector({
   routes: getRoutes,
