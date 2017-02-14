@@ -1,1 +1,5 @@
-export const SET_BACKGROUND = 'SET_BACKGROUND';
+// Saga Page
+export const SIMPLE_BUTTON_CLICK = '@@Sagas/SIMPLE_BUTTON_CLICK';
+export const API_BUTTON_CLICK = '@@Sagas/API_BUTTON_CLICK';
+export const API_BUTTON_CLICK_SUCCESS = '@@Sagas/API_BUTTON_CLICK_SUCCESS';
+export const API_BUTTON_CLICK_ERROR = '@@Sagas/API_BUTTON_CLICK_ERROR';

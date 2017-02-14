@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 
-import config from './config/';
 import routes from './routes/';
+import sagas from './sagas/';
 import users from './users/';
 
 const rootReducer = combineReducers({
-  config,
   routes,
+  sagas,
   users,
 });
 
