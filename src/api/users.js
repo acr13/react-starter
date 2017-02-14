@@ -1,5 +1,5 @@
 export const getUser = () =>
-  fetch('https://jsonplaceholder.typicode.com/posts/1')
+  fetch('https://jsonplaceholder.typicode.com/posts/' + (Math.floor(Math.random() * 100)))
     .then(resp => resp.json());
 
 export const getUsers = () =>
