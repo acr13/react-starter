@@ -5,32 +5,21 @@ import SagaUser from '../../components/saga-user/';
 
 import './sagas.css';
 import sagaConnector from '../../selectors/saga-page';
-import {
-  onSimpleButtonClick,
-  onApiButtonClick,
-} from '../../actions/saga-page';
+import sagaActions from '../../actions/saga-page';
 
-const Sagas = ({ fetchedUser, apiAction, simpleAction }) => (
+const Sagas = (props) => (
   <div className="sagas">
     <div className="row">
-      <button onClick={() => simpleAction()}>Simple Action</button>
+      <button onClick={() => props.onSimpleButtonClick()}>Simple Action</button>
       <label className="label">Simple Action</label>
     </div>
     <div className="row">
-      <button onClick={() => apiAction()}>API Action</button>
+      <button onClick={() => props.onApiButtonClick()}>API Action</button>
       <label className="label">API Action</label>
     </div>
 
-    <SagaUser user={fetchedUser} />
+    <SagaUser user={props.fetchedUser} />
   </div>
 );
 
-export default connect(
-  sagaConnector,
-  (dispatch) => {
-    return {
-      simpleAction: () => dispatch(onSimpleButtonClick()),
-      apiAction: () => dispatch(onApiButtonClick()),
-    };
-  }
-)(Sagas);
+export default connect(sagaConnector, sagaActions)(Sagas);

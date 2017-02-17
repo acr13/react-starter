@@ -3,14 +3,15 @@ import {
   API_BUTTON_CLICK,
 } from './consts';
 
-export const onSimpleButtonClick = () => {
-  return {
-    type: SIMPLE_BUTTON_CLICK,
-  };
+// helper function to create redux actions
+// returns a function that returns an object
+// with type and payload set
+
+const action = (type, payload = null) => () => ({ type, payload });
+
+const sagaPageActions = {
+  onApiButtonClick: action(API_BUTTON_CLICK),
+  onSimpleButtonClick: action(SIMPLE_BUTTON_CLICK),
 };
 
-export const onApiButtonClick = () => {
-  return {
-    type: API_BUTTON_CLICK,
-  };
-};
+export default sagaPageActions;
