@@ -9,15 +9,15 @@ import {
 } from '../../actions/consts';
 import { getUser } from '../../api/users';
 
-function* simpleSideEffect(action) {
-  yield delay(1);
+export function* simpleSideEffect(action) {
+  yield call(delay, 1);
 }
 
 export function* simpleSaga() {
   yield takeEvery(SIMPLE_BUTTON_CLICK, simpleSideEffect);
 }
 
-function* apiSideEffect(action) {
+export function* apiSideEffect(action) {
   try {
     const user = yield call(getUser);
     yield put({ type: API_BUTTON_CLICK_SUCCESS, payload: user });
