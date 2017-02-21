@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Counter from '../../components/counter/';
 import SagaUser from '../../components/saga-user/';
 
 import './sagas.css';
@@ -9,9 +10,13 @@ import sagaActions from '../../actions/saga-page';
 
 const Sagas = (props) => (
   <div className="sagas">
+    <div className="row">{'Simple Actions (counter)'}</div>
     <div className="row">
-      <button onClick={() => props.onSimpleButtonClick()}>Simple Action</button>
-      <label className="label">Simple Action</label>
+      <Counter
+        value={props.counterValue}
+        onIncrementCounter={props.onIncrementCounter}
+        onDecrementCounter={props.onDecrementCounter}
+      />
     </div>
     <div className="row">
       <button onClick={() => props.onApiButtonClick()}>API Action</button>

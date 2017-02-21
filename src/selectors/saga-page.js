@@ -1,7 +1,8 @@
 import { createStructuredSelector } from 'reselect';
-import { getFetchedUser } from './raw-selectors';
+import { getCounterValue, getFetchedUser } from './raw-selectors';
 
 const sagaConnector = createStructuredSelector({
+  counterValue: getCounterValue,
   fetchedUser: getFetchedUser,
 });
 
