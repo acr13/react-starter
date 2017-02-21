@@ -1,21 +1,11 @@
-import { delay } from 'redux-saga';
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 
 import {
-  SIMPLE_BUTTON_CLICK,
   API_BUTTON_CLICK,
   API_BUTTON_CLICK_SUCCESS,
   API_BUTTON_CLICK_ERROR,
 } from '../../actions/consts';
 import { getUser } from '../../api/users';
-
-export function* simpleSideEffect(action) {
-  yield call(delay, 1);
-}
-
-export function* simpleSaga() {
-  yield takeEvery(SIMPLE_BUTTON_CLICK, simpleSideEffect);
-}
 
 export function* apiSideEffect(action) {
   try {

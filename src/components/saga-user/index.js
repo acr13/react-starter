@@ -1,15 +1,15 @@
 import React from 'react';
 
+import './code.css';
+
 const SagaUser = ({ user }) => {
   if (!user) {
     return null;
   }
   
   return (
-    <div>
-      <div>id: {user.id}</div>
-      <div>title: {user.title}</div>
-      <div>body: {user.body}</div>
+    <div className="code-wrapper">
+      <code>{JSON.stringify(user, null, '\t')}</code>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Counter from '../../components/counter/';
 import SagaUser from '../../components/saga-user/';
+import RandomNum from '../../components/random-num/';
 
 import './sagas.css';
 import sagaConnector from '../../selectors/saga-page';
@@ -17,6 +18,12 @@ const Sagas = (props) => (
         onIncrementCounter={props.onIncrementCounter}
         onDecrementCounter={props.onDecrementCounter}
       />
+    </div>
+    <div className="row">{'Actions with a payload (random num)'}</div>
+    <div className="row">
+      <RandomNum
+        onNewRandomNumber={props.onNewRandomNumber}
+        value={props.randomValue} />
     </div>
     <div className="row">
       <button onClick={() => props.onApiButtonClick()}>API Action</button>
