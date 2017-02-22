@@ -26,8 +26,8 @@ const Sagas = (props) => (
         value={props.randomValue} />
     </div>
     <div className="row">
-      <button onClick={() => props.onApiButtonClick()}>API Action</button>
-      <label className="label">API Action</label>
+      <button onClick={() => props.onApiButtonClick()}>{'API Action'}</button>
+      <label className="label">{'API Action'}</label>
     </div>
 
     <SagaUser user={props.fetchedUser} />
